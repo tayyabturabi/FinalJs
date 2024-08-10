@@ -2,12 +2,22 @@
 // [['bat','tab'],['tap','pat'],['cat']]
 
 
-var arrUser = ["bat","tap","cat","tab","pat"];
+function anagrams(words) {
+    let anagrams = {};
 
-var combWord = [];
+    words.forEach(word => {
+        let sortedWord = word.split('').sort().join('')
 
-for(i=0; i<arrUser.length;i++){
-    if(arrUser[i]===())
-    console.log(arrUser)
+        if (!anagrams[sortedWord]) {
+            anagrams[sortedWord] = []
+        }
+        anagrams[sortedWord].push(word)
+    })
+
+    return Object.values(anagrams)
 }
 
+let words = ["bat", "tap", "cat", "tab", "pat"]
+let result = anagrams(words)
+
+console.log(result)
